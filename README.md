@@ -1,0 +1,2 @@
+# FFmpegForAndroid
+集成了fdkaac以及x264的ffmpeg
