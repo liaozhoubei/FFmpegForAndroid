@@ -53,10 +53,10 @@ build_one(){
 	--nm=$TOOLCHAIN/bin/i686-linux-android-nm \
 	--sysroot=$PLATFORM \
 	--extra-cflags="-I$X264_INCLUDE  -I$FDK_INCLUDE " \
-	--extra-ldflags="-L$FDK_LIB -L$X264_LIB" \
+	--extra-ldflags="-L$X264_LIB  -L$FDK_LIB " \
 	--enable-gpl \
 	--enable-shared \
-	--disable-static \
+	--enable-static \
 	--enable-version3 \
 	--enable-pthreads \
 	--enable-small \
@@ -128,4 +128,4 @@ make -j16
 make install
 
 cp $FDK_LIB/libfdk-aac.so $PREFIX/lib
-
+cp $X264_LIB/libx264.so $PREFIX/lib
